@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Harmattan&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+.header {
+  margin-top: 20px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* text animation    */
+
+svg {
+  font-family: "Harmattan", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+svg text {
+  animation: stroke 4s infinite alternate;
+  stroke-width: 2;
+  stroke: #000000;
+  font-size: 50px;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(0, 0, 0, 0);
+    stroke: rgba(0, 0, 0, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+
+  70% {
+    fill: rgba(0, 0, 0, 0);
+    stroke: rgba(0, 0, 0, 1);
+  }
+
+  80% {
+    fill: rgba(0, 0, 0, 0);
+    stroke: rgba(0, 0, 0, 1);
+    stroke-width: 3;
+  }
+
+  100% {
+    fill: rgba(0, 0, 0, 1);
+    stroke: rgba(0, 0, 0, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+.wrapper {
+  background-color: transparent;
+  width: 630px;
+  height: 40px;
+}
+
+/* item list */
+
+.nav-items {
+  display: flex;
+  padding: 8px 12px;
+  margin-top: 3px;
+  justify-content: center;
+}
+
+.nav-items a {
+  color: black;
+  text-decoration: none;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.nav-items a:hover {
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 25px;
+  font-weight: 540;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#savebutton {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+main {
+  padding: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contentForm {
+  margin: 60px;
+  padding: 20px;
+  border: solid black;
+  box-sizing: border-box;
+  box-shadow: 20px 30px 30px black;
+  border-radius: 15px;
+  background-color: #b97c85;
+}
+
+#contentForm h1 {
+  margin-left: 490px;
+}
+
+#contentForm label {
+  font-size: 18px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  background-color: #cca9ad;
+  color: black;
+  padding: 10px 20px;
+  font-size: medium;
+  border: none;
+  cursor: pointer;
+  margin-left: 660px;
+}
+
+#savedContent {
+  margin-top: 30px;
+  color: black;
+  padding-top: 20px;
+  width: auto;
+  margin-left: 30px;
+}
+
+#savedContent h1 {
+  font-size: 27px;
+  margin-bottom: 10px;
+  list-style-type: decimal-leading-zero;
+}
+
+#savedContent h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+#savedContent h3 {
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+#savedContent img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}

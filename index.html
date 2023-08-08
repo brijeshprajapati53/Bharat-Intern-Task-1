@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-1 Content Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="heading">
+        <div class="wrapper">
+          <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+              Content Management Tool
+            </text>
+          </svg>
+        </div>
+      </div>
+      <div class="nav-items">
+        <div><a href="#home">Home</a></div>
+        <div><a href="#skills">Latest Content</a></div>
+        <div><a href="#contactme">Popular Content</a></div>
+        <div><a href="#contactme">Feedbacks</a></div>
+      </div>
+    </div>
+
+    <main>
+      <form id="contentForm">
+        <h1><b>-------- Content Details --------</b></h1>
+        <label for="title">Title-</label>
+        <input type="text" id="title" name="title" />
+
+        <label for="content">Description-</label>
+        <textarea id="content" name="content" rows="4"></textarea>
+
+        <label for="image">Image-</label>
+        <input type="text" id="image" name="image" />
+
+        <label for="video">Video URL-</label>
+        <input type="text" id="video" name="video" />
+
+        <input type="submit" value="Save" id="savebutton" />
+      </form>
+
+      <div id="savedContent">
+        <!-- The saved content will be displayed here -->
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("contentForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Get the input values
+          var title = document.getElementById("title").value;
+          var image = document.getElementById("image").value;
+          var video = document.getElementById("video").value;
+          var content = document.getElementById("content").value;
+
+          // Create a new content element
+          var newContent = document.createElement("div");
+          newContent.innerHTML = `
+            <h1>Blog Details--</h1>
+            <h2>Title: ${title}</h2>
+            <h3>Content: ${content}</h3>
+            <h3>Video url: ${video}</h3>
+            <img src="${image}" alt="Blog Image">
+            `;
+
+          // Append the new content to the savedContent div
+          document.getElementById("savedContent").appendChild(newContent);
+
+          // Reset the form fields
+          document.getElementById("title").value = "";
+          document.getElementById("content").value = "";
+          document.getElementById("image").value = "";
+          document.getElementById("video").value = "";
+        });
+    </script>
+  </body>
+</html>
